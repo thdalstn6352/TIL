@@ -1,5 +1,3 @@
-> 출처 [코드잇](https://www.codeit.kr/)을 보고 작성한 내용입니다.
-
 # Null 병합 연산자 ??
 
 ## 정의
@@ -62,3 +60,5 @@ console.log(example4); // 0
 ```
 
 0과 false는 null이나 undefined 값이 아닌 falsy값이 라는 점을 명심하자.
+
+> 출처 [코드잇](https://www.codeit.kr/)을 보고 작성한 내용입니다.
