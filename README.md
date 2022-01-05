@@ -22,5 +22,7 @@
 
 - [문법 & 표현](https://github.com/thdalstn6352/TIL/blob/main/Javascript/%EB%AC%B8%EB%B2%95/%EB%AC%B8%EB%B2%95%20%26%20%ED%91%9C%ED%98%84.md)
 - [예외 처리](https://github.com/thdalstn6352/TIL/blob/main/Javascript/%EB%AC%B8%EB%B2%95/%EC%97%90%EB%9F%AC%20%EC%B2%98%EB%A6%AC.md)
+- [메소드 정리](https://github.com/thdalstn6352/TIL/blob/main/Javascript/%EB%AC%B8%EB%B2%95/%EB%A9%94%EC%86%8C%EB%93%9C.md)
+- [데이터 구조(map, set)](https://github.com/thdalstn6352/TIL/blob/main/Javascript/%EB%AC%B8%EB%B2%95/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0.md)
 
 ## React
