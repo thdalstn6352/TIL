@@ -15,8 +15,8 @@
 
 - [함수 선언법](https://github.com/thdalstn6352/TIL/blob/main/Javascript/%ED%95%A8%EC%88%98/%ED%95%A8%EC%88%98%20%EC%84%A0%EC%96%B8%EB%B2%95.md)
 - [함수 파라미터 정리](https://github.com/thdalstn6352/TIL/blob/main/Javascript/%ED%95%A8%EC%88%98/%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%20%EC%A0%95%EB%A6%AC.md)
-- [기명 함수 표현식](<https://github.com/thdalstn6352/TIL/blob/main/Javascript/%ED%95%A8%EC%88%98%20%EC%84%A0%EC%96%B8%EB%B2%95/%EA%B8%B0%EB%AA%85%20%ED%95%A8%EC%88%98(Named%20Function).md>)
-- [즉시 실행 함수(IIFE)](<https://github.com/thdalstn6352/TIL/blob/main/Javascript/%ED%95%A8%EC%88%98%20%EC%84%A0%EC%96%B8%EB%B2%95/%EC%A6%89%EC%8B%9C%EC%8B%A4%ED%96%89%ED%95%A8%EC%88%98(IIFE).md>)
+- [기명 함수 표현식](<https://github.com/thdalstn6352/TIL/blob/main/Javascript/%ED%95%A8%EC%88%98/%EA%B8%B0%EB%AA%85%20%ED%95%A8%EC%88%98(Named%20Function).md>)
+- [즉시 실행 함수(IIFE)](<https://github.com/thdalstn6352/TIL/blob/main/Javascript/%ED%95%A8%EC%88%98/%EC%A6%89%EC%8B%9C%EC%8B%A4%ED%96%89%ED%95%A8%EC%88%98(IIFE).md>)
 
 ### 자바스크립트 문법
 
