@@ -3,7 +3,7 @@
 ## Hook의 규칙
 
 - 반드시 리액트 컴포넌트 함수(Functional Component) 안에서 사용해야 함
-- 컴포넌트 함수의 최상위에서만 사용 (조건문, 반복문 안에서 못 씀)
+- 컴포넌트 함수의 최상위에서만 사용가능
 
 ## useState
 
@@ -15,7 +15,7 @@ const [state, setState] = useState(initialState);
 
 ### 콜백으로 초깃값 지정하기
 
-초깃값을 계산하는 코드가 복잡한 경우에 활용
+초깃값을 계산하는 코드가 복잡한 경우에 활용한다.
 
 ```javascript
 const [state, setState] = useState(() => {
@@ -31,7 +31,7 @@ setState(nextState);
 ```
 
 이전 State를 참조해서 State 변경
-비동기 함수에서 최신 State 값을 가져와서 새로운 State 값을 만들 때
+비동기 함수에서 최신 State 값을 가져와서 새로운 State 값을 만들 때 사용
 
 ```javascript
 setState((prevState) => {
