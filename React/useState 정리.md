@@ -1,11 +1,10 @@
-앞에서 비동기로 useState 를 사용할 때 주의할 점을 배웠는데요.
-그때 Setter 함수의 또 다른 사용법을 배웠죠?
-이번 레슨에서는 초깃값을 지정하는 또 다른 방법에 대해서 소개하고,
-여태까지 배운 useState 사용법을 총정리해보도록 하겠습니다.
-초깃값 지정하기
+## 초깃값 지정하기
+
 const [state, setState] = useState(initialState);
 useState 함수에 값을 전달하면 초깃값으로 지정할 수 있었습니다.
-콜백으로 초깃값 지정하기
+
+## 콜백으로 초깃값 지정하기
+
 const [state, setState] = useState(() => {
 // 초기값을 계산
 return initialState;
@@ -33,7 +32,9 @@ return savedValues
 그 이후로는 콜백을 실행하지 않기 때문에 getSavedValues 를 불필요하게 실행하지 않습니다.
 단, 이때 주의할 점은 이 콜백 함수가 리턴할 때까지 리액트가 렌더링하지 않고 기다린다는 점인데요.
 콜백 함수의 실행이 오래 걸릴 수록 초기 렌더링이 늦어진다는 점에 주의하세요.
-Setter 함수 사용하기
+
+## Setter 함수 사용하기
+
 기본
 const [state, setState] = useState(0);
 
@@ -43,20 +44,26 @@ setState(state + 1);
 Setter 함수에다가 값을 전달하면, 해당하는 값으로 변경되었죠?
 이때 주의할 점이 있었는데요,
 배열이나 객체 같은 참조형은 반드시 새로운 값을 만들어서 전달해야 한다는 거였습니다.
-참조형 State 사용의 잘못된 예
+
+### 참조형 State 사용의 잘못된 예
+
 const [state, setState] = useState({ count: 0 });
 
 const handleAddClick = () => {
 state.count += 1; // 참조형 변수의 프로퍼티를 수정
 setState(state); // 참조형이기 때문에 변수의 값(레퍼런스)는 변하지 않음
 }
-참조형 State 사용의 올바른 예
+
+### 참조형 State 사용의 올바른 예
+
 const [state, setState] = useState({ count: 0 });
 
 const handleAddClick = () => {
 setState({ ...state, count: state.count + 1 }); // 새로운 객체 생성
 }
-콜백으로 State 변경
+
+## 콜백으로 State 변경
+
 setState((prevState) => {
 // 다음 State 값을 계산
 return nextState;
