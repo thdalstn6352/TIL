@@ -1,4 +1,5 @@
-사이드 이펙트(Side Effect)란?
+# 사이드 이펙트(Side Effect)란?
+
 사이드 이펙트는 한국어로는 '부작용'이라는 뜻입니다.
 일상생활에서는 '약의 부작용'처럼 사용하는 단어인데요.
 예를 들면 감기약을 먹었을 때
@@ -8,16 +9,20 @@
 일상생활에서는 주로 안 좋은 것들을 부작용이라고 부르지만
 프로그래밍에선 말 그대로 외부에 부수적인 작용을 하는 걸 말하는데요.
 어떤 것인지 간단한 자바스크립트 함수를 예시로 알아봅시다.
+
+```javascript
 let count = 0;
 
 function add(a, b) {
-const result = a + b;
-count += 1; // 함수 외부의 값을 변경
-return result;
+  const result = a + b;
+  count += 1; // 함수 외부의 값을 변경
+  return result;
 }
 
 const val1 = add(1, 2);
 const val2 = add(-4, 5);
+```
+
 위 코드에서 add 함수를 봅시다.
 이 함수는 a, b 를 파라미터로 받아서 더한 값을 리턴하는데요.
 함수 코드 중에서 함수 바깥에 있는 count 라는 변수의 값을 변경하는 코드가 있죠?
@@ -37,6 +42,8 @@ useEffect 는 리액트 컴포넌트 함수 안에서
 주로 리액트 외부에 있는 데이터나 상태를 변경할 때 사용하는데요.
 간단한 예시들을 보면서 어떤 식으로 활용할 수 있는지 가볍게 살펴봅시다.
 페이지 정보 변경
+
+```javascript
 useEffect(() => {
 document.title = title; // 페이지 데이터를 변경
 }, [title]);
@@ -61,6 +68,8 @@ return () => {
 clearInterval(timerId);
 }
 }, []);
+```
+
 참고: setInterval 이라는 함수를 쓰면 일정한 시간마다 콜백 함수를 실행할 수 있습니다.
 useEffect를 쓰면 좋은 경우
 여기서 한 가지 의문점이 들 수도 있습니다.
@@ -95,6 +104,7 @@ document.title = nextTitle;
 };
 
 return (
+
 <div>
 <input value={title} onChange={handleChange} />
 <button onClick={handleClearClick}>초기화</button>
@@ -131,6 +141,7 @@ document.title = title;
 }, [title]);
 
 return (
+
 <div>
 <input value={title} onChange={handleChange} />
 <button onClick={handleClearClick}>초기화</button>
@@ -190,6 +201,7 @@ const handleShowClick = () => setShow(true);
 const handleHideClick = () => setShow(false);
 
 return (
+
 <div>
 {show && <Timer />}
 <button onClick={handleShowClick}>보이기</button>
