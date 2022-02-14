@@ -84,35 +84,38 @@ useEffect를 쓰면 좋은 경우
 이게 어떤 의미인지 간단한 예시를 통해 살펴봅시다.
 아래 App 컴포넌트는 인풋 입력에 따라 페이지 제목을 바꾸는 컴포넌트인데요.
 핸들러 함수만 사용한 예시
-import { useState } from 'react';
 
-const INITIAL_TITLE = 'Untitled';
+```javascript
+import { useState } from "react";
+
+const INITIAL_TITLE = "Untitled";
 
 function App() {
-const [title, setTitle] = useState(INITIAL_TITLE);
+  const [title, setTitle] = useState(INITIAL_TITLE);
 
-const handleChange = (e) => {
-const nextTitle = e.target.value;
-setTitle(nextTitle);
-document.title = nextTitle;
-};
+  const handleChange = (e) => {
+    const nextTitle = e.target.value;
+    setTitle(nextTitle);
+    document.title = nextTitle;
+  };
 
-const handleClearClick = () => {
-const nextTitle = INITIAL_TITLE;
-setTitle(nextTitle);
-document.title = nextTitle;
-};
+  const handleClearClick = () => {
+    const nextTitle = INITIAL_TITLE;
+    setTitle(nextTitle);
+    document.title = nextTitle;
+  };
 
-return (
-
-<div>
-<input value={title} onChange={handleChange} />
-<button onClick={handleClearClick}>초기화</button>
-</div>
-);
+  return (
+    <div>
+      <input value={title} onChange={handleChange} />
+      <button onClick={handleClearClick}>초기화</button>
+    </div>
+  );
 }
 
 export default App;
+```
+
 handleChange 함수와 handleClearClick 함수가 있습니다.
 모두 title 스테이트를 변경한 후에 document.title 도 함께 변경해주고 있는데요.
 여기서 document.title 값을 바꾸는 건 외부의 상태를 변경하는 거니까 사이드 이펙트입니다.
@@ -120,36 +123,39 @@ handleChange 함수와 handleClearClick 함수가 있습니다.
 document.title 값도 변경해야 한다는 걸 기억해뒀다가 관련된 코드를 작성해야 한다는 점이 아쉽습니다.
 동료 개발자가 나중에 컴포넌트를 수정하거나 1년 뒤의 내가 컴포넌트를 수정할 때 빠뜨리기 좋겠죠?
 useEffect를 사용한 예시
-import { useEffect, useState } from 'react';
 
-const INITIAL_TITLE = 'Untitled';
+```javascript
+import { useEffect, useState } from "react";
+
+const INITIAL_TITLE = "Untitled";
 
 function App() {
-const [title, setTitle] = useState(INITIAL_TITLE);
+  const [title, setTitle] = useState(INITIAL_TITLE);
 
-const handleChange = (e) => {
-const nextTitle = e.target.value;
-setTitle(nextTitle);
-};
+  const handleChange = (e) => {
+    const nextTitle = e.target.value;
+    setTitle(nextTitle);
+  };
 
-const handleClearClick = () => {
-setTitle(INITIAL_TITLE);
-};
+  const handleClearClick = () => {
+    setTitle(INITIAL_TITLE);
+  };
 
-useEffect(() => {
-document.title = title;
-}, [title]);
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
-return (
-
-<div>
-<input value={title} onChange={handleChange} />
-<button onClick={handleClearClick}>초기화</button>
-</div>
-);
+  return (
+    <div>
+      <input value={title} onChange={handleChange} />
+      <button onClick={handleClearClick}>초기화</button>
+    </div>
+  );
 }
 
 export default App;
+```
+
 useEffect 를 사용한 예시에서는 document 를 다루는 사이드 이펙트 부분만 따로 처리하고 있는데요.
 이렇게 하니 setTitle 함수를 쓸 때마다 document.title 을 변경하는 코드를 신경 쓰지 않아도 되니까 편리합니다.
 게다가 처음 렌더링 되었을 때 'Untitled'라고 페이지 제목을 변경하는 효과까지 낼 수 있죠.
@@ -157,6 +163,8 @@ useEffect 를 사용한 예시에서는 document 를 다루는 사이드 이펙�
 이렇게 useEffect 는 리액트 안과 밖의 데이터를 일치시키는데 활용하면 좋습니다.
 useEffect 를 사용했을 때 반복되는 코드를 줄이고, 동작을 쉽게 예측할 수 있는 코드를 작성할 수 있기 때문이죠.
 정리 함수 (Cleanup Function)
+
+```javascript
 useEffect(() => {
 // 사이드 이펙트
 
@@ -164,6 +172,8 @@ return () => {
 // 사이드 이펙트에 대한 정리
 }
 }, [dep1, dep2, dep3, ...]);
+```
+
 useEffect 의 콜백 함수에서 사이드 이펙트를 만들면 정리가 필요한 경우가 있습니다.
 이럴 때 콜백 함수에서 리턴 값으로 정리하는 함수를 리턴할 수 있었는데요.
 리턴한 정리 함수에서는 사이드 이펙트에 대한 뒷정리를 합니다.
@@ -172,45 +182,47 @@ useEffect 의 콜백 함수에서 사이드 이펙트를 만들면 정리가 필
 쉽게 말해서 콜백을 한 번 실행했으면, 정리 함수도 반드시 한 번 실행된다고 생각하면 됩니다.
 정확히는 새로운 콜백 함수가 호출되기 전에 실행되거나 (앞에서 실행한 콜백의 사이드 이펙트를 정리), 컴포넌트가 화면에서 사라지기 전에 실행됩니다 (맨 마지막으로 실행한 콜백의 사이드 이펙트를 정리).
 예시: 타이머
-import { useEffect, useState } from 'react';
+
+```javascript
+import { useEffect, useState } from "react";
 
 function Timer() {
-const [second, setSecond] = useState(0);
+  const [second, setSecond] = useState(0);
 
-useEffect(() => {
-const timerId = setInterval(() => {
-console.log('타이머 실행중 ... ');
-setSecond((prevSecond) => prevSecond + 1);
-}, 1000);
-console.log('타이머 시작 🏁');
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      console.log("타이머 실행중 ... ");
+      setSecond((prevSecond) => prevSecond + 1);
+    }, 1000);
+    console.log("타이머 시작 🏁");
 
     return () => {
       clearInterval(timerId);
-      console.log('타이머 멈춤 ✋');
+      console.log("타이머 멈춤 ✋");
     };
+  }, []);
 
-}, []);
-
-return <div>{second}</div>;
+  return <div>{second}</div>;
 }
 
 function App() {
-const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-const handleShowClick = () => setShow(true);
-const handleHideClick = () => setShow(false);
+  const handleShowClick = () => setShow(true);
+  const handleHideClick = () => setShow(false);
 
-return (
-
-<div>
-{show && <Timer />}
-<button onClick={handleShowClick}>보이기</button>
-<button onClick={handleHideClick}>감추기</button>
-</div>
-);
+  return (
+    <div>
+      {show && <Timer />}
+      <button onClick={handleShowClick}>보이기</button>
+      <button onClick={handleHideClick}>감추기</button>
+    </div>
+  );
 }
 
 export default App;
+```
+
 일정한 시간 간격마다 콜백 함수를 실행하는 setInterval 이라는 함수도 정리가 필요한 사이드 이펙트입니다.
 매번 타이머를 시작하기만 하면 타이머가 엄청나게 많아지겠죠?
 이 컴포넌트는 렌더링이 끝나면 타이머를 시작하고, 화면에서 사라지면 타이머를 멈춥니다.
