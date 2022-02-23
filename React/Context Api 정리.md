@@ -2,11 +2,8 @@
 
 Context는 한국어로 맥락이라는 뜻입니다.
 쉽게 말해서 어떤 상황에 대한 정보를 의미하는데요.
-앞에서 배운 예시처럼
-'사용자가 한국어를 사용하는 상황', '사용자가 영어를 사용하는 상황' 같은 걸
-여러 컴포넌트에 공유하고 싶을 때 사용합니다.
-Props만으로 리액트 개발을 하다 보면
-여러 곳에 쓰이는 데이터를 내려주고 싶을 때가 있는데요.
+앞에서 배운 예시처럼 '사용자가 한국어를 사용하는 상황', '사용자가 영어를 사용하는 상황' 같은 걸 여러 컴포넌트에 공유하고 싶을 때 사용합니다.
+Props만으로 리액트 개발을 하다 보면 여러 곳에 쓰이는 데이터를 내려주고 싶을 때가 있는데요.
 이때 컴포넌트의 단계가 많다면 여러 번 반복해서 Prop을 내려줘야 합니다.
 이런 문제점을 프롭 드릴링(Prop Drilling)이라고 했죠?
 Context는 프롭 드릴링을 해결하기 위해 사용하는 기능입니다.
@@ -28,23 +25,20 @@ Context를 쓸 때는 반드시 값을 공유할 범위를 정하고 써야 하�
 이때 범위는 Context 객체에 있는 Provider 라는 컴포넌트로 정해줄 수 있습니다.
 이때 Provider의 value prop으로 공유할 값을 내려주면 됩니다.
 
-```javacript
-import { createContext } from 'react';
+```javascript
+import { createContext } from "react";
 
-const LocaleContext = createContext('ko');
+const LocaleContext = createContext("ko");
 
 function App() {
-return (
-
-<div>
-... 바깥의 컴포넌트에서는 LocaleContext 사용불가
-
-       <LocaleContext.Provider value="en">
-          ... Provider 안의 컴포넌트에서는 LocaleContext 사용가능
-       </LocaleContext.Provider>
+  return (
+    <div>
+      ... 바깥의 컴포넌트에서는 LocaleContext 사용불가
+      <LocaleContext.Provider value="en">
+        ... Provider 안의 컴포넌트에서는 LocaleContext 사용가능
+      </LocaleContext.Provider>
     </div>
-
-);
+  );
 }
 ```
 
@@ -78,11 +72,8 @@ function App() {
 
 Provider 역할을 하는 컴포넌트를 하나 만들고,
 여기서 State를 만들어서 value 로 넘겨줄 수 있습니다.
-그리고 아래의 useLocale 같이
-useContext 를 사용해서 값을 가져오는 커스텀 Hook을 만들 수도 있겠죠.
-이렇게 하면 Context에서 사용하는 State 값은
-반드시 우리가 만든 함수를 통해서만 쓸 수 있기 때문에
-안전한 코드를 작성하는데 도움이 됩니다.
+그리고 아래의 useLocale 같이 useContext 를 사용해서 값을 가져오는 커스텀 Hook을 만들 수도 있겠죠. 이렇게 하면 Context에서 사용하는 State 값은
+반드시 우리가 만든 함수를 통해서만 쓸 수 있기 때문에 안전한 코드를 작성하는데 도움이 됩니다.
 
 ```javascript
 import { createContext, useContext, useState } from "react";
