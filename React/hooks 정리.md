@@ -2,8 +2,8 @@
 
 ## Hook의 규칙
 
-- 반드시 리액트 컴포넌트 함수(Functional Component) 안에서 사용해야 함
-- 컴포넌트 함수의 최상위에서만 사용가능
+- 반드시 리액트 컴포넌트 함수(Functional Component) 안에서 사용해야 한다.
+- 컴포넌트 함수의 최상위에서만 사용 가능하다.
 
 ## useState
 
@@ -26,11 +26,14 @@ const [state, setState] = useState(() => {
 
 ### State 변경
 
+#### 1. 이전 State 값을 참조하지 않고 변경
+
 ```javascript
 setState(nextState);
 ```
 
-이전 State를 참조해서 State 변경
+#### 2. 이전 State를 참조해서 State 변경
+
 비동기 함수에서 최신 State 값을 가져와서 새로운 State 값을 만들 때 사용
 
 ```javascript
@@ -43,7 +46,8 @@ setState((prevState) => {
 ## useEffect
 
 컴포넌트 함수에서 사이드 이펙트(리액트 외부의 값이나 상태를 변경할 때)에 활용하는 함수
-처음 렌더링 후에 한 번만 실행
+
+### 1. 처음 렌더링 후에 한 번만 실행
 
 ```javascript
 useEffect(() => {
@@ -51,8 +55,9 @@ useEffect(() => {
 }, []);
 ```
 
-렌더링 후에 특정 값이 바뀌었으면 실행
-• 참고로 처음 렌더링 후에도 한 번 실행됨
+### 2. 렌더링 후에 특정 값이 바뀌었으면 실행
+
+• 참고로 처음 렌더링 후에도 한 번 실행된다.
 
 ```javascript
 useEffect(() => {
@@ -60,7 +65,9 @@ useEffect(() => {
 }, [dep1, dep2, dep3, ...]);
 ```
 
-사이드 이펙트 정리(Cleanup)하기
+> dep1, dep2와 같이 [] 안에 들어있는 요소가 변경될 때마다 새로 렌더링 된다.
+
+### 사이드 이펙트 정리(Cleanup)하기
 
 ```javascript
 useEffect(() => {
@@ -103,21 +110,18 @@ const handleLoad = useCallback((option) => {
 }, [dep1, dep2, dep3, ...]);
 ```
 
+> useCallback안에 작성한 콜백 함수에서 setState를 하게 되면, 이전 state값을 불러오지 못하는 현상이 일어날 수 있다. 따라서 setState를 할 경우 이전 state값을 참조하여 변경해야한다.
+
 ## Custom Hook
 
-자주 사용하는 Hook 코드들을 모아서 함수로 만들 수 있었는데요.
-이때 useOOO 처럼 반드시 맨 앞에 use 라는 단어를 붙여서
-다른 개발자들이 Hook이라는 걸 알 수 있게 해줘야 합니다.
-useHooks 나 streamich/react-hooks 라는 사이트를 보시면
-다양한 Custom Hook이 소개되어 있는데요.
-이 사이트들에서 다른 리액트 개발자들은 어떻게 사용하는지 살펴보시면 재미있을 겁니다.
-여기선 간단한 예시만 몇 개 살펴보겠습니다.
+자주 사용하는 Hook 코드들을 모아서 함수로 만들 수 있다. 이때 useOOO 처럼 반드시 맨 앞에 use 라는 단어를 붙여서
+다른 개발자들이 Hook이라는 걸 알 수 있게 해줘야 한다. useHooks 나 streamich/react-hooks 라는 사이트를 보면 다양한 Custom Hook이 소개되어 있다.
+간단한 예시를 살펴보자
 
 ## useAsync
 
-비동기 함수의 로딩, 에러 처리를 하는 데 사용할 수 있는 함수입니다.
-함수를 asyncFunction 이라는 파라미터로 추상화해서
-wrappedFunction 이라는 함수를 만들어 사용하는 방식을 눈여겨보시면 좋을 것 같습니다.
+비동기 함수의 로딩, 에러 처리를 하는 데 사용할 수 있는 함수이다.
+함수를 asyncFunction 이라는 파라미터로 추상화해서 wrappedFunction 이라는 함수를 만들어 사용하는 방식을 눈여겨보시면 좋을 것 같다.
 
 ```javascript
 function useAsync(asyncFunction) {
@@ -145,8 +149,7 @@ function useAsync(asyncFunction) {
 
 ## useToggle
 
-toggle 함수를 호출할 때마다 value 값이 참/거짓으로 번갈아가며 바뀝니다.
-ON/OFF 스위치 같은 걸 만들 때 유용하겠죠?
+toggle 함수를 호출할 때마다 value 값이 참/거짓으로 번갈아가며 바뀐다.
 
 ```javascript
 function useToggle(initialValue = false) {
@@ -158,14 +161,8 @@ function useToggle(initialValue = false) {
 
 ## useTimer
 
-start 를 실행하면 callback 이라는 파라미터로 넘겨 준 함수를
-timeout 밀리초 마다 실행하고, stop 을 실행하면 멈춥니다.
-setInterval 이란 함수는 웹 브라우저에 함수를 등록해서
-일정한 시간 간격마다 실행하는데요.
-실행할 때마다 사이드 이펙트를 만들고, 사용하지 않으면 정리를 해줘야 합니다.
-clearInterval 이라는 함수를 실행해서
-사이드 이펙트를 정리하는 부분을 눈여겨 보시면 좋을 것 같습니다.
-Custom Hook을 만들어서 이렇게 사이드 이펙트 정리를 빼먹지 않고 할 수 있겠죠?
+start 를 실행하면 callback 이라는 파라미터로 넘겨 준 함수를 timeout 밀리초 마다 실행하고, stop 을 실행하면 멈춘다. setInterval의 경우 실행할 때마다 사이드 이펙트를 만들고, 사용하지 않으면 정리를 해줘야 한다.
+따라서 정리 함수에 clearInterval 이라는 함수를 실행해서 사이드 이펙트를 정리하게 된다.
 
 ```javascript
 function useTimer(callback, timeout) {
