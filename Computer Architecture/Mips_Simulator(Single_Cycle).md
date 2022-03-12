@@ -41,22 +41,21 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 ◎ R-type
 
-<img src ="https://images.velog.io/images/thdalstn6352/post/657d58a1-a0be-43b9-ab01-159af8012537/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(1).png"/>
-<img src = "https://images.velog.io/images/thdalstn6352/post/d9b47c72-4f40-4c68-a000-50fdac8ce857/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(2).png"/>
+<img src ="https://images.velog.io/images/thdalstn6352/post/657d58a1-a0be-43b9-ab01-159af8012537/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(1).png"/><img src = "https://images.velog.io/images/thdalstn6352/post/d9b47c72-4f40-4c68-a000-50fdac8ce857/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(2).png"/>
 
 ◎ I-type
 
-<img src ="https://images.velog.io/images/thdalstn6352/post/9161dbfe-79c0-4a22-afbb-4cb432a7968a/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(3).png"/> 
-<img src ="https://images.velog.io/images/thdalstn6352/post/d6958b7e-a439-42f6-af8e-72e2df81cba7/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(4).png" />
+<img src ="https://images.velog.io/images/thdalstn6352/post/9161dbfe-79c0-4a22-afbb-4cb432a7968a/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(3).png"/><img src ="https://images.velog.io/images/thdalstn6352/post/d6958b7e-a439-42f6-af8e-72e2df81cba7/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(4).png" />
 
 ◎ J-type
 
-<img src ="https://images.velog.io/images/thdalstn6352/post/18739056-86bf-4865-af7f-d5fbb81e708f/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(5).png" />
-<img src ="https://images.velog.io/images/thdalstn6352/post/e4ee5589-0fef-40b5-9ae6-63d40f9ad9b0/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(6).png" />
+<img src ="https://images.velog.io/images/thdalstn6352/post/18739056-86bf-4865-af7f-d5fbb81e708f/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(5).png" /> <img src ="https://images.velog.io/images/thdalstn6352/post/e4ee5589-0fef-40b5-9ae6-63d40f9ad9b0/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(6).png" />
 
 ## B. Endian
 
-컴퓨터의 메모리와 같은 1차원의 공간에 여러 개의 연속된 대상을 배열하는 방법을 뜻한다. Endian은 큰 단위가 앞에 나오는 빅 엔디언(Big-endian)과 작은 단위가 앞에 나오는 리틀 엔디언(Little-endian)으로 나눌 수 있다. <img src ="https://images.velog.io/images/thdalstn6352/post/208ef161-ddb0-4809-b9d5-0a9684c49fc8/image.png" />
+컴퓨터의 메모리와 같은 1차원의 공간에 여러 개의 연속된 대상을 배열하는 방법을 뜻한다. Endian은 큰 단위가 앞에 나오는 빅 엔디언(Big-endian)과 작은 단위가 앞에 나오는 리틀 엔디언(Little-endian)으로 나눌 수 있다.
+
+<img src ="https://images.velog.io/images/thdalstn6352/post/208ef161-ddb0-4809-b9d5-0a9684c49fc8/image.png" />
 
 두 방법은 서로 다른 여러 아키텍처에서 서로 공존하고 있다. 그러나 x86 아키텍처가 리틀 엔디언을 쓰기 때문에, 오늘날 x86 아키텍처를 사용하는 대부분의 데스크톱 컴퓨터는 리틀 엔디언을 쓰며 이를 ‘인텔 포맷’이라 한다. 이번 프로젝트에서 리틀 엔디언으로 표현된 instruction을 빅 엔디언으로 바꾸는 연산을 수행하였다.
 
