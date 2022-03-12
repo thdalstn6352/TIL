@@ -33,6 +33,7 @@ ISA란 하드웨어와 사용자가 어떻게 지시하고 명령을 수행을 �
 ### (2) MIPS-32 ISA
 
 MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로지에서 개발한 RISC ISA로 초소형 마이크로 컨트롤러에서부터 고급 네트워킹 장비에 이르는 수십억 가지 전자 제품의 핵심 부분인 고성능의 업계 표준 아키텍처이다. 탄탄한 instruction과 32 비트에서 64 비트까지의 확장성, 광범위한 소프트웨어 개발 도구 등 사용자에게 폭 넓은 지원을 제공한다.
+
 <img src = "https://images.velog.io/images/thdalstn6352/post/d13769a5-9547-485f-8b10-eeed5d5b6779/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3.png" />
 
 각 명령은 4-byte word 크기의 2진수로 표현되어 있고, 이들은 각각 하나의 연산을 수행한다.
@@ -131,15 +132,15 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 <img src="https://images.velog.io/images/thdalstn6352/post/e14df0ce-64dc-4c9e-8c60-3dd09e0fcf27/image.png" />
 
-(1) Instruction Fetch(IF) : PC에 있는 명령어(instruction)을 가져온다.
+**(1) Instruction Fetch(IF)** : PC에 있는 명령어(instruction)을 가져온다.
 
-(2) Instruction decode and register operand fetch (ID/RF) : 명령어를 해석하고 rs와 rt의 레지스터 값을 읽는다.
+**(2) Instruction decode and register operand fetch (ID/RF)** : 명령어를 해석하고 rs와 rt의 레지스터 값을 읽는다.
 
-(3) Execute/Evaluate memory address (EX/AG) :　 rs의 값과 rt의 값을 비교하여 beq와 bne의 조건에 만족할 경우 pc값에 4를 더하고 BranchAddress를 더한다.
+**(3) Execute/Evaluate memory address (EX/AG)** :　 rs의 값과 rt의 값을 비교하여 beq와 bne의 조건에 만족할 경우 pc값에 4를 더하고 BranchAddress를 더한다.
 
-(4) Memory operand fetch (MEM) : 메모리에 접근하지 않는다.
+**(4) Memory operand fetch (MEM)** : 메모리에 접근하지 않는다.
 
-(5) Store/writeback result (WB) : 결과를 레지스터에 저장하지 않는다.
+**(5) Store/writeback result (WB)** : 결과를 레지스터에 저장하지 않는다.
 
 <br/>
 
@@ -147,15 +148,15 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 <img src ="https://images.velog.io/images/thdalstn6352/post/7bde4bc7-b1f3-4304-a437-ebd847b616e9/image.png"  />
 
-(1) Instruction Fetch(IF) : PC에 있는 명령어(instruction)을 가져온다.
+**(1) Instruction Fetch(IF)** : PC에 있는 명령어(instruction)을 가져온다.
 
-(2) Instruction decode and register operand fetch (ID/RF) : 명령어를 해석하여 Jump target address을 읽어 pc를 바꾸어준다.
+**(2) Instruction decode and register operand fetch (ID/RF)** : 명령어를 해석하여 Jump target address을 읽어 pc를 바꾸어준다.
 
-(3) Execute/Evaluate memory address (EX/AG) : 연산을 하지 않는다.
+**(3) Execute/Evaluate memory address (EX/AG)** : 연산을 하지 않는다.
 
-(4) Memory operand fetch (MEM) : 메모리에 접근하지 않는다.
+**(4) Memory operand fetch (MEM)** : 메모리에 접근하지 않는다.
 
-(5) Store/writeback result (WB) : 결과를 레지스터에 저장하지 않는다.
+**(5) Store/writeback result (WB)** : 결과를 레지스터에 저장하지 않는다.
 
 <hr />
 
