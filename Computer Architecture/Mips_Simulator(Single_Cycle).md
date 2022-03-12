@@ -40,22 +40,29 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 -MIPS-32 ISA의 명령어 형식은 아래와 같이 나눌 수 있다.
 
 ◎ R-type
-<img src ="https://images.velog.io/images/thdalstn6352/post/657d58a1-a0be-43b9-ab01-159af8012537/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(1).png" width="100%"/><img src = "https://images.velog.io/images/thdalstn6352/post/d9b47c72-4f40-4c68-a000-50fdac8ce857/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(2).png" width="100%"/>
+
+<img src ="https://images.velog.io/images/thdalstn6352/post/657d58a1-a0be-43b9-ab01-159af8012537/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(1).png"/>
+<img src = "https://images.velog.io/images/thdalstn6352/post/d9b47c72-4f40-4c68-a000-50fdac8ce857/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(2).png"/>
 
 ◎ I-type
-<img src ="https://images.velog.io/images/thdalstn6352/post/9161dbfe-79c0-4a22-afbb-4cb432a7968a/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(3).png" width="100%"/> <img src ="https://images.velog.io/images/thdalstn6352/post/d6958b7e-a439-42f6-af8e-72e2df81cba7/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(4).png" width="100%" />
+
+<img src ="https://images.velog.io/images/thdalstn6352/post/9161dbfe-79c0-4a22-afbb-4cb432a7968a/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(3).png"/> 
+<img src ="https://images.velog.io/images/thdalstn6352/post/d6958b7e-a439-42f6-af8e-72e2df81cba7/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(4).png" />
 
 ◎ J-type
-<img src ="https://images.velog.io/images/thdalstn6352/post/18739056-86bf-4865-af7f-d5fbb81e708f/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(5).png" width="100%"/><img src ="https://images.velog.io/images/thdalstn6352/post/e4ee5589-0fef-40b5-9ae6-63d40f9ad9b0/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(6).png" width="100%"/>
+
+<img src ="https://images.velog.io/images/thdalstn6352/post/18739056-86bf-4865-af7f-d5fbb81e708f/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(5).png" />
+<img src ="https://images.velog.io/images/thdalstn6352/post/e4ee5589-0fef-40b5-9ae6-63d40f9ad9b0/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%20(6).png" />
 
 ## B. Endian
 
-컴퓨터의 메모리와 같은 1차원의 공간에 여러 개의 연속된 대상을 배열하는 방법을 뜻한다. Endian은 큰 단위가 앞에 나오는 빅 엔디언(Big-endian)과 작은 단위가 앞에 나오는 리틀 엔디언(Little-endian)으로 나눌 수 있다. <img src ="https://images.velog.io/images/thdalstn6352/post/208ef161-ddb0-4809-b9d5-0a9684c49fc8/image.png" width="100%"/>
+컴퓨터의 메모리와 같은 1차원의 공간에 여러 개의 연속된 대상을 배열하는 방법을 뜻한다. Endian은 큰 단위가 앞에 나오는 빅 엔디언(Big-endian)과 작은 단위가 앞에 나오는 리틀 엔디언(Little-endian)으로 나눌 수 있다. <img src ="https://images.velog.io/images/thdalstn6352/post/208ef161-ddb0-4809-b9d5-0a9684c49fc8/image.png" />
+
 두 방법은 서로 다른 여러 아키텍처에서 서로 공존하고 있다. 그러나 x86 아키텍처가 리틀 엔디언을 쓰기 때문에, 오늘날 x86 아키텍처를 사용하는 대부분의 데스크톱 컴퓨터는 리틀 엔디언을 쓰며 이를 ‘인텔 포맷’이라 한다. 이번 프로젝트에서 리틀 엔디언으로 표현된 instruction을 빅 엔디언으로 바꾸는 연산을 수행하였다.
 
 ## c. Data Path
 
-<img src ="https://images.velog.io/images/thdalstn6352/post/0b2f770f-c5a9-4a77-a542-f05fd703f45a/image.png" width="100%"/>
+<img src ="https://images.velog.io/images/thdalstn6352/post/0b2f770f-c5a9-4a77-a542-f05fd703f45a/image.png"/>
 = 연산들을 수행하기 위한 여려 유닛들의 구조로 MIPS연산은 크게 5개로 나눌 수 있다.
 
 **(1) Instruction Fetch(IF)** : PC에 있는 명령어(instruction)을 가져온다.
@@ -72,7 +79,7 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 ### (a) R_Type Data_Path
 
-<img src="https://images.velog.io/images/thdalstn6352/post/2156b7ab-dd1b-45bd-866e-1b01b8f39339/image.png" width="100%"/>
+<img src="https://images.velog.io/images/thdalstn6352/post/2156b7ab-dd1b-45bd-866e-1b01b8f39339/image.png"/>
 
 **(1) Instruction Fetch(IF)** : PC에 있는 명령어(instruction)을 가져온다.
 
@@ -88,7 +95,7 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 ### (b) LW Data_Path
 
-<img src="https://images.velog.io/images/thdalstn6352/post/485b9e58-20a2-4be6-b3d1-bc867da48043/image.png" width="100%" />
+<img src="https://images.velog.io/images/thdalstn6352/post/485b9e58-20a2-4be6-b3d1-bc867da48043/image.png" />
 
 **(1) Instruction Fetch(IF)** : PC에 있는 명령어(instruction)을 가져온다.
 
@@ -104,7 +111,7 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 ### (C) SW Data_Path
 
-<img src="https://images.velog.io/images/thdalstn6352/post/8a6dd247-1436-4a70-b715-61fa4abea52e/image.png" width="100%"/>
+<img src="https://images.velog.io/images/thdalstn6352/post/8a6dd247-1436-4a70-b715-61fa4abea52e/image.png"/>
 
 **(1) Instruction Fetch(IF)** : PC에 있는 명령어(instruction)을 가져온다.
 
@@ -120,7 +127,7 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 ### (D) Branch Data_Path
 
-<img src="https://images.velog.io/images/thdalstn6352/post/e14df0ce-64dc-4c9e-8c60-3dd09e0fcf27/image.png" width="100%"/>
+<img src="https://images.velog.io/images/thdalstn6352/post/e14df0ce-64dc-4c9e-8c60-3dd09e0fcf27/image.png" />
 
 (1) Instruction Fetch(IF) : PC에 있는 명령어(instruction)을 가져온다.
 
@@ -136,7 +143,7 @@ MIPS(Microprocessor without Interlocked Pipeline Stages)는 밉스 테크놀로�
 
 ### (E) Jump Data_Path
 
-<img src ="https://images.velog.io/images/thdalstn6352/post/7bde4bc7-b1f3-4304-a437-ebd847b616e9/image.png" width="100%" />
+<img src ="https://images.velog.io/images/thdalstn6352/post/7bde4bc7-b1f3-4304-a437-ebd847b616e9/image.png"  />
 
 (1) Instruction Fetch(IF) : PC에 있는 명령어(instruction)을 가져온다.
 
