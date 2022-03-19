@@ -120,9 +120,13 @@ Dirty bit는 가상 메모리 관리 시스템의 성능을 향상시키는 데 
 
 - 32비트 컴퓨터에선 페이지 테이블은 4MB정도로 크다.
 - 페이지 테이블을 작은 조각으로 나눈다. 페이지 테이블 자체가 다시 페이지 화 되는 것.
+
   <img src ="https://images.velog.io/images/thdalstn6352/post/056943b0-8fbb-49eb-81e8-190e3ca1d34e/image.png"/>
+  
 - p1은 Outer Page Table의 Index, p2는 Inner Page Table의 변위, d는 페이지의 Offeset
+
   <img src ="https://images.velog.io/images/thdalstn6352/post/a6426083-0f21-47fe-8cd3-bd6d9a036371/image.png"/>
+
 - 페이지의 접근 시간이 늘어나는 단점이 있다.
 
 **② 해시 페이지 테이블(Hash Page Tables)**
