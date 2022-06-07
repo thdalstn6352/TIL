@@ -44,7 +44,7 @@ TTF/OTF(2mb 이상) > WOFF(1.3mb 이하) > WOFF2(KB)
 하지만 브라우저에 따라 지원하지 않는 포맷이 있을 수 도 있기때문에 모든 포맷에 대한 선언
 transfonter.org 에서 폰트 포맷 변경 가능
 
-2. local 폰트 사용
+2. local 폰ß트 사용ß
 로컬 pc에 해당 폰트가 있을 경우 다운로드를 받지 않고, 해당 로컬에 존재하는 폰트를 사용해서 폰트 적용
 local('폰트 이름') css 적용
 
@@ -58,10 +58,13 @@ subset방식과 비슷하게 특정 필요한 글자의 unicode를 range로 설�
 5. data-uri
 data-uri 형식(base64)으로 폰트 설정하기. 음 이건 별로인듯
 
-폰트 preload
+## 폰트 preload
 
 폰트가 사용되는 시점 이전에 load해서 사용?
-<link rel="preload" href="폰트이름.woff2" as="font" type="font/woff2" crossorigin> 설정해준다.
+```javascript
+<link rel="preload" href="폰트이름.woff2" as="font" type="font/woff2" crossorigin>
+```
+설정해준다.
 이때, 폰트 이름에 해당하는 값은 그냥 font.woff2가 아닌 빌드 시에 static에 생성되는 폰트 + hash값을 넣어 설정해줘야한다.
 
 기존의 폰트 설정은 style.css가 로드가 된 이후에 폰트에 대한 설정이 이루어지는데 위처럼 설정하면 가장 먼저 로드한다.
